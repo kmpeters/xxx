@@ -51,17 +51,17 @@ dbLoadDatabase("$(TOP)/dbd/iocxxxVX.dbd")
 iocxxxVX_registerRecordDeviceDriver(pdbbase)
 
 ### save_restore setup
-< save_restore.cmd
+< cmds/save_restore.cmd
 
 ### Allstop, alldone
 dbLoadRecords("$(MOTOR)/db/motorUtil.db", "P=xxx:")
 doAfterIocInit("motorUtilInit('xxx:')")
 
 ### Scan support
-#!< sscan.cmd
+#!< cmds/sscan.cmd
 
 ### Stuff for user programming ###
-< calc.cmd
+< cmds/calc.cmd
 
 ###############################################################################
 # Set shell prompt
