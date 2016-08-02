@@ -11,11 +11,11 @@
 # path as mounted by that file
 
 # That is, do this...
-#set_savefile_path(startup, "autosave")
+#!set_savefile_path(startup, "autosave")
 
 # ... or this...
 save_restoreSet_NFSHost("oxygen", "164.54.22.10")
-set_savefile_path("/export/oxygen4/MOONEY/epics/synApps/support/xxx/iocBoot/iocvxWorks", "autosave")
+set_savefile_path("<nfs_export_PATH_to_iocxxx_directory>", "autosave")
 
 # status PVs: default is to use them
 #save_restoreSet_UseStatusPVs(1)
@@ -29,10 +29,10 @@ save_restoreSet_IncompleteSetsOk(1)
 save_restoreSet_DatedBackupFiles(1)
 
 # Number of sequenced backup files to write
-save_restoreSet_NumSeqFiles(3)
+save_restoreSet_NumSeqFiles(15)
 
 # Time interval between sequenced backups
-save_restoreSet_SeqPeriodInSeconds(300)
+save_restoreSet_SeqPeriodInSeconds(43200)
 
 # Ok to retry connecting to PVs whose initial connection attempt failed?
 save_restoreSet_CAReconnect(1)
@@ -52,10 +52,6 @@ doAfterIocInit("create_monitor_set('auto_positions.req',5,'P=xxx:')")
 set_pass0_restoreFile("auto_settings.sav")
 set_pass1_restoreFile("auto_settings.sav")
 doAfterIocInit("create_monitor_set('auto_settings.req',30,'P=xxx:')")
-
-# Note that you can restore a .sav file without also autosaving to it.
-#set_pass0_restoreFile("octupole_settings.sav")
-#set_pass1_restoreFile("octupole_settings.sav")
 
 ###
 # specify directories in which to search for included request files
@@ -96,10 +92,9 @@ save_restoreSet_Debug(0)
 # (and dbLoadTemplate(), which calls dbLoadRecords()).
 # This requires EPICS 3.15.1 or later, or 3.14 patched as described in
 # autosave R5-5 documentation.
-epicsEnvSet("BUILT_SETTINGS", "built_settings.req")
-epicsEnvSet("BUILT_POSITIONS", "built_positions.req")
-autosaveBuild("$(BUILT_SETTINGS)", "_settings.req", 1)
-#autosaveBuild("$(BUILT_SETTINGS)", ".req", 1)
-autosaveBuild("$(BUILT_POSITIONS)", "_positions.req", 1)
+#!epicsEnvSet("BUILT_SETTINGS", "built_settings.req")
+#!epicsEnvSet("BUILT_POSITIONS", "built_positions.req")
+#!autosaveBuild("$(BUILT_SETTINGS)", "_settings.req", 1)
+#!autosaveBuild("$(BUILT_POSITIONS)", "_positions.req", 1)
 
 # END save_restore.cmd --------------------------------------------------------
