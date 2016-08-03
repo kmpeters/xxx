@@ -1,5 +1,7 @@
 # Linux startup script
 
+< envPaths
+
 epicsEnvSet("PREFIX", "xxx:")
 
 ### For alive
@@ -10,8 +12,6 @@ epicsEnvSet("IOCBOOT", $(TOP)/iocBoot/$(IOC))
 epicsEnvSet("ENGINEER","Peterson")
 epicsEnvSet("LOCATION","location")
 epicsEnvSet("GROUP","group")
-
-< envPaths
 
 # save_restore.cmd needs the full path to the startup directory, which
 # envPaths currently does not provide
