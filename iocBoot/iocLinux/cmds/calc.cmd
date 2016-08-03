@@ -1,5 +1,6 @@
 ### Stuff for user programming ###
-dbLoadRecords("$(CALC)/calcApp/Db/userCalcGlobalEnable.db","P=$(PREFIX)")
+# userCalcGlobalEnable is not available in synApps_5_8
+#!dbLoadRecords("$(CALC)/calcApp/Db/userCalcGlobalEnable.db","P=$(PREFIX)")
 
 dbLoadRecords("$(CALC)/calcApp/Db/userCalcs10.db","P=$(PREFIX)")
 appendToFile("$(BUILT_SETTINGS)", '$(P)userCalcEnable')
