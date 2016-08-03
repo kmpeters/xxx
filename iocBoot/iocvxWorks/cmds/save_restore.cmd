@@ -92,9 +92,9 @@ save_restoreSet_Debug(0)
 # (and dbLoadTemplate(), which calls dbLoadRecords()).
 # This requires EPICS 3.15.1 or later, or 3.14 patched as described in
 # autosave R5-5 documentation.
-#!epicsEnvSet("BUILT_SETTINGS", "built_settings.req")
-#!epicsEnvSet("BUILT_POSITIONS", "built_positions.req")
-#!autosaveBuild("$(BUILT_SETTINGS)", "_settings.req", 1)
-#!autosaveBuild("$(BUILT_POSITIONS)", "_positions.req", 1)
+epicsEnvSet("BUILT_SETTINGS", "built_settings.req")
+epicsEnvSet("BUILT_POSITIONS", "built_positions.req")
+autosaveBuild("$(BUILT_SETTINGS)", "_settings.req", 1)
+autosaveBuild("$(BUILT_POSITIONS)", "_positions.req", 1)
 
 # END save_restore.cmd --------------------------------------------------------

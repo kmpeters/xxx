@@ -3,5 +3,5 @@
 # after iocInit:
 # create_monitor_set("auto_settings.req",30,"P=xxx:")
 
-#!file built_settings.req P=$(P)
+file built_settings.req P=$(P)
 
