@@ -31,15 +31,18 @@ dbLoadDatabase("../../dbd/iocxxxLinux.dbd")
 iocxxxLinux_registerRecordDeviceDriver(pdbbase)
 
 ### save_restore setup
-< save_restore.cmd
+< cmds/save_restore.cmd
 
 # motorUtil (allstop & alldone)
 dbLoadRecords("$(MOTOR)/db/motorUtil.db", "P=$(PREFIX)")
 # Run this after iocInit:
 doAfterIocInit("motorUtilInit('$(PREFIX)')")
 
+# Scan support
+#!< cmds/sscan.cmd
+
 ### Stuff for user programming ###
-< calc.cmd
+< cmds/calc.cmd
 
 # Miscellaneous PV's, such as burtResult
 dbLoadRecords("$(STD)/stdApp/Db/misc.db","P=$(PREFIX)")
@@ -59,7 +62,7 @@ iocInit
 dbl > dbl-all.txt
 
 ### also report these environment variables to the alive server
-#dbpf("$(PREFIX)alive.ENV8", "IOCBOOT")
+dbpf("$(PREFIX)alive.ENV8", "IOCBOOT")
 
 ### Report  states of database CA links
 dbcar(*,1)
