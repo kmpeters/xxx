@@ -221,6 +221,43 @@ foreach my $dir (glob("ioc*"))
 		move "${old}.sh", "${new}.sh";
 	}
 	
+	if ( -d "cmds" )
+	{
+		chdir "cmds"
+	
+		foreach my $file (glob("*.cmd*"))
+		{
+			printf "\r%-50s", "$file";
+			doSed("s!/${old}/!/${new}/!g", $file);
+			doSed("s/${old}:/${new}:/g", $file);
+			doSed("s/${old}\\./${new}./g", $file);
+			doSed("s/ioc${old}/ioc${new}/g", $file);
+			doSed("s/${old}Lib/${new}Lib/g", $file);
+			doSed("s/${old}App/${new}App/g", $file);
+			doSed("s/=${old}/=${new}/g", $file);
+			#doSed("/dbLoadDatabase/s/${old}/${new}/g", $file);
+			#doSed("/registerRecordDeviceDriver/s/${old}/${new}/g", $file);
+			#doSed("/shellPromptSet/s/${old}/${new}/g", $file);
+		}
+	
+		chdir ".."
+	}
+	
+	if ( -d "templates" )
+	{
+		chdir "templates"
+	
+		foreach my $file (glob("*.substitutions"))
+		{
+			printf "\r%-50s", $file;
+			doSed("s/${old}/${new}/g", $file);
+			doSed("s/${old}:/${new}:/g", $file);
+			doSed("s/${old}App/${new}App/g", $file);
+		}
+	
+		chdir ".."
+	}
+	
 	chdir ".."
 }
 
