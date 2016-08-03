@@ -223,7 +223,7 @@ foreach my $dir (glob("ioc*"))
 	
 	if ( -d "cmds" )
 	{
-		chdir "cmds"
+		chdir "cmds";
 	
 		foreach my $file (glob("*.cmd*"))
 		{
@@ -240,12 +240,12 @@ foreach my $dir (glob("ioc*"))
 			#doSed("/shellPromptSet/s/${old}/${new}/g", $file);
 		}
 	
-		chdir ".."
+		chdir "..";
 	}
 	
 	if ( -d "templates" )
 	{
-		chdir "templates"
+		chdir "templates";
 	
 		foreach my $file (glob("*.substitutions"))
 		{
@@ -255,10 +255,10 @@ foreach my $dir (glob("ioc*"))
 			doSed("s/${old}App/${new}App/g", $file);
 		}
 	
-		chdir ".."
+		chdir "..";
 	}
 	
-	chdir ".."
+	chdir "..";
 }
 
 printf "\r%-50s", "${new}App/op/adl";
