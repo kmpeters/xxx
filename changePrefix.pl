@@ -296,6 +296,10 @@ if ( -d "./ui" )
 		printf "\r%-50s", $file;
 		doSed("s/${old}/${new}/g", $file);
 	}
+	if ( -f "${old}.ui" )
+	{
+		move "${old}.ui", "${new}.ui";
+	}
 }
 
 chdir "${top}/${new}App/op";
