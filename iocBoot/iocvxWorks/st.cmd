@@ -63,6 +63,16 @@ doAfterIocInit("motorUtilInit('xxx:')")
 ### Stuff for user programming ###
 < cmds/calc.cmd
 
+# Miscellaneous PV's, such as burtResult
+dbLoadRecords("$(STD)/stdApp/Db/misc.db","P=xxx:")
+
+# devIocStats
+dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db","IOC=xxx")
+
+### Load database record for alive heartbeating support.
+# RHOST specifies the IP address that receives the heartbeats.
+dbLoadRecords("$(ALIVE)/aliveApp/Db/alive.db", "P=xxx:,RHOST=164.54.100.11")
+
 ###############################################################################
 # Set shell prompt
 shellPromptSet "iocvxWorks> "
