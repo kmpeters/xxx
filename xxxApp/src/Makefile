@@ -117,9 +117,10 @@ ifdef MOTOR
 	xxx_Common_DBD += devAttocube.dbd devFaulhaberMotor.dbd devImsMotor.dbd
 	xxx_Common_DBD += devKohzuMotor.dbd devMclennanMotor.dbd devMicos.dbd
 	xxx_Common_DBD += devMicroMo.dbd devNewFocus.dbd devNewport.dbd
-  ifdef SNCSEQ
-	xxx_Common_DBD += devAerotechSeq.dbd devNewportSeq.dbd
-  endif
+### This will be needed for future versions of motor, but it breaks builds that use motor-6-9
+#  ifdef SNCSEQ
+#	xxx_Common_DBD += devAerotechSeq.dbd devNewportSeq.dbd
+#  endif
 	xxx_Common_DBD += devOriel.dbd devPC6K.dbd devPIJena.dbd devPIMotor.dbd
 	xxx_Common_DBD += devSPiiPlus.dbd devSmartMotorMotor.dbd devSoftMotor.dbd
 	xxx_Common_DBD += devThorLabs.dbd motorSimSupport.dbd
