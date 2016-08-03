@@ -81,9 +81,9 @@ save_restoreSet_Debug(0)
 # Tell autosave to automatically build built_settings.req and
 # built_positions.req from databases and macros supplied to dbLoadRecords()
 # (and dbLoadTemplate(), which calls dbLoadRecords()).
-#!epicsEnvSet("BUILT_SETTINGS", "built_settings.req")
-#!epicsEnvSet("BUILT_POSITIONS", "built_positions.req")
-#!autosaveBuild("$(BUILT_SETTINGS)", "_settings.req", 1)
-#!autosaveBuild("$(BUILT_POSITIONS)", "_positions.req", 1)
+epicsEnvSet("BUILT_SETTINGS", "built_settings.req")
+epicsEnvSet("BUILT_POSITIONS", "built_positions.req")
+autosaveBuild("$(BUILT_SETTINGS)", "_settings.req", 1)
+autosaveBuild("$(BUILT_POSITIONS)", "_positions.req", 1)
 
 # END save_restore.cmd --------------------------------------------------------
