@@ -75,7 +75,7 @@ dbLoadRecords("$(ALIVE)/aliveApp/Db/alive.db", "P=xxx:,RHOST=164.54.100.11")
 
 ###############################################################################
 # Set shell prompt
-shellPromptSet "iocvxWorks> "
+shellPromptSet "iocxxx> "
 iocLogDisable=0
 iocInit
 ###############################################################################
