@@ -1,4 +1,4 @@
-# Linux startup script
+# Darwin startup script
 
 < envPaths
 
@@ -27,8 +27,8 @@ epicsEnvSet EPICS_CA_MAX_ARRAY_BYTES 64010
 ################################################################################
 # Tell EPICS all about the record types, device-support modules, drivers,
 # etc. in the software we just loaded (xxx.munch)
-dbLoadDatabase("../../dbd/iocxxxLinux.dbd")
-iocxxxLinux_registerRecordDeviceDriver(pdbbase)
+dbLoadDatabase("../../dbd/iocxxxDarwin.dbd")
+iocxxxDarwin_registerRecordDeviceDriver(pdbbase)
 
 ### save_restore setup
 < cmds/save_restore.cmd

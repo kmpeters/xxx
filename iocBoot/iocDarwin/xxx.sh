@@ -7,8 +7,8 @@
 #!IOC_STARTUP_DIR=/home/username/epics/ioc/synApps/xxx/iocBoot/iocxxx
 
 # Set EPICS_HOST_ARCH if the env var isn't already set properly for this IOC
-#!EPICS_HOST_ARCH=linux-x86_64
-#!EPICS_HOST_ARCH=linux-x86_64-debug
+#!EPICS_HOST_ARCH=darwin-x86
+#!EPICS_HOST_ARCH=darwin-x86-debug
 
 IOC_NAME=xxx
 # The name of the IOC binary isn't necessarily the same as the name of the IOC

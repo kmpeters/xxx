@@ -1,6 +1,6 @@
 TOP = ../..
 include $(TOP)/configure/CONFIG
-ARCH = linux-x86_64
-#!ARCH = linux-x86_64-debug
+ARCH = darwin-x86
+#!ARCH = darwin-x86_64-debug
 TARGETS = envPaths
 include $(TOP)/configure/RULES.ioc
