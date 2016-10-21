@@ -1,4 +1,4 @@
-# Linux startup script
+# Windows startup script
 
 < envPaths
 
@@ -25,10 +25,13 @@ errlogInit(20000)
 epicsEnvSet EPICS_CA_MAX_ARRAY_BYTES 64010
 
 ################################################################################
-# Tell EPICS all about the record types, device-support modules, drivers,
-# etc. in the software we just loaded (xxx.munch)
-dbLoadDatabase("../../dbd/iocxxxLinux.dbd")
-iocxxxLinux_registerRecordDeviceDriver(pdbbase)
+# Tell EPICS all about the record types, device-support modules, drivers, etc
+# 64-bit Windows
+dbLoadDatabase("../../dbd/iocxxxWin64.dbd")
+iocxxxWin64_registerRecordDeviceDriver(pdbbase)
+# 32-bit Windows
+#!dbLoadDatabase("../../dbd/iocxxxWin32.dbd")
+#!iocxxxWin32_registerRecordDeviceDriver(pdbbase)
 
 ### save_restore setup
 < cmds/save_restore.cmd

@@ -1,0 +1,18 @@
+@echo ON
+
+SETLOCAL
+
+set EPICS_DISPLAY_PATH=
+set EPICS_DISPLAY_PATH=%EPICS_DISPLAY_PATH%;
+set EPICS_DISPLAY_PATH=%EPICS_DISPLAY_PATH%;
+set EPICS_DISPLAY_PATH=%EPICS_DISPLAY_PATH%;
+
+REM Add medm to the PATH
+REM set PATH=%PATH%;C:\Program Files\EPICS Windows Tools
+
+echo %EPICS_DISPLAY_PATH%
+
+REM Launch medm
+start medm -x -macro "P=xxx:" xxx.adl
+
+ENDLOCAL
