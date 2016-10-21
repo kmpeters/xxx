@@ -87,6 +87,7 @@ if ( -f "start_epics.bat" )
 	printf "\r%-50s", "start_epics.bat";
 	doSed("s/${old}.adl/${new}.adl/g", "start_epics.bat");
 	doSed("s/=${old}:/=${new}:/g", "start_epics.bat");
+	doSed("s/${old}App/${new}App/g", "start_epics.bat");
 }
 
 printf "\r%-50s", "${new}App/src";
