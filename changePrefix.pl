@@ -82,6 +82,13 @@ if ( -f "setup_epics_common" )
 	doSed("s/${old}App/${new}App/g", "setup_epics_common");
 }
 
+if ( -f "start_epics.bat" )
+{
+	printf "\r%-50s", "start_epics.bat";
+	doSed("s/${old}.adl/${new}.adl/g", "start_epics.bat");
+	doSed("s/=${old}:/=${new}:/g", "start_epics.bat");
+}
+
 printf "\r%-50s", "${new}App/src";
 move "${old}App", "${new}App";
 chdir "${new}App/src";
@@ -221,6 +228,12 @@ foreach my $dir (glob("ioc*"))
 		move "${old}.sh", "${new}.sh";
 	}
 	
+	if ( -f "start_ioc.bat" )
+	{
+		printf "\r%-50s", "start_ioc.bat";
+		doSed("s/${old}/${new}/g", "start_ioc.bat");
+	}
+
 	if ( -d "cmds" )
 	{
 		chdir "cmds";
