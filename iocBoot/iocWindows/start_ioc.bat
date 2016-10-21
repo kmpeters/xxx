@@ -1,4 +1,4 @@
-@echo ON
+@echo OFF
 
 SETLOCAL
 
@@ -8,6 +8,9 @@ REM set EPICS_CA_MAX_ARRAY_BYTES=100000000
 
 REM Add caRepeater to the PATH
 REM set PATH=%PATH%;D:/epics/base-3.14.12.5/bin/windows-x64
+
+REM Go to the startup directory
+cd %~dp0
 
 REM dlls to the PATH
 call dllPath.bat
