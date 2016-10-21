@@ -123,10 +123,14 @@ if ($ENV{GATEWAY} ne "")
     $applications{GATEWAY} = $ENV{GATEWAY};
 }
 
-$format = 0;
+$format = 2;
 if ($form eq "bash")
 {
     $format = 1;
+}
+elsif ($form eq "tcsh")
+{
+    $format = 0;
 }
 
 Parse("$top/configure/RELEASE", $applications);
@@ -136,6 +140,10 @@ foreach $key (keys %applications)
 	if ($format == 1)
 	{
 		print "$key=$applications{$key}\n";
+	}
+	elsif ($format == 2)
+	{
+		print "set $key=$applications{$key}\n"
 	}
 	else
 	{
