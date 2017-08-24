@@ -107,6 +107,11 @@ ifdef IP
 	xxx_Common_LIBS := ip $(xxx_Common_LIBS)
 endif
 
+ifdef IPAC
+	xxx_Common_DBD += drvIpac.dbd
+	xxx_Common_LIBS := Ipac $(xxx_Common_LIBS)
+endif
+
 ifdef MODBUS
 	xxx_Common_DBD += modbusSupport.dbd
 	xxx_Common_LIBS := modbus $(xxx_Common_LIBS)
@@ -323,8 +328,7 @@ ifeq (vxWorks,$(findstring vxWorks, $(T_A)))
 
 	ifdef IPAC
 		iocxxxVX_DBD += tyGSOctal.dbd
-		iocxxxVX_DBD += drvIpac.dbd
-		xxx_LIBS_vxWorks += TyGSOctal Ipac
+		xxx_LIBS_vxWorks += TyGSOctal
 		iocxxxVX_DBD += IP520.dbd
 		xxx_LIBS_vxWorks += IP520
 	endif
@@ -395,11 +399,6 @@ endif
 			xxx_LIBS_Linux += mcaCanberra
 			xxx_SYS_LIBS_Linux += net pcap
 		endif
-	endif
-
-	ifdef IPAC
-		iocxxxLinux_DBD += drvIpac.dbd
-		xxx_LIBS_Linux += Ipac
 	endif
 
 	ifdef SOFTGLUE
