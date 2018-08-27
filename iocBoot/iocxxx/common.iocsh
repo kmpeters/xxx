@@ -22,7 +22,7 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "64010")
 ### save_restore setup, change SAVE_PATH if you are having autosave manage its own NFS mount
 iocshLoad("$(AUTOSAVE)/iocsh/autosave_settings.iocsh", "PREFIX=$(PREFIX), SAVE_PATH=$(TOP)/iocBoot/$(IOC), NUM_SEQ=12, SEQ_PERIOD=43200")
 iocshLoad("$(TOP)/iocBoot/$(IOC)/cmds/autosaveBuild.iocsh",     "PREFIX=$(PREFIX)")
-iocshLoad("$(AUTOSAVE)/iocsh/save_restore.iocsh",      "PREFIX=$(PREFIX), POSITIONS_FILE=auto_positions, SETTINGS_FILE=auto_settings")
+iocshLoad("$(TOP)/iocBoot/$(IOC)/cmds/save_restore.iocsh",      "PREFIX=$(PREFIX), POSITIONS_FILE=auto_positions, SETTINGS_FILE=auto_settings")
 
 ###
 # specify directories in which to search for included request files
