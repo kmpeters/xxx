@@ -3,7 +3,7 @@
 SETLOCAL
 
 REM This should match an existing subdirectory of the IOC's bin dir
-set EPICS_HOST_ARCH=windows-x32-static
+set EPICS_HOST_ARCH=win32-x86-static
 
 REM set EPICS_CA_MAX_ARRAY_BYTES=100000000
 
