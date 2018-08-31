@@ -290,6 +290,15 @@ foreach my $dir (glob("ioc*"))
 		move "softioc/${old}.sh", "softioc/${new}.sh";
 	}
 	
+	foreach my $file (glob("*.bat"))
+	{
+		if ( -f $file )
+		{
+			printf "\r%-50s", $file;
+			doSed("s/${old}/${new}/g", $file);
+		}
+	}
+	
 	chdir ".."
 }
 
