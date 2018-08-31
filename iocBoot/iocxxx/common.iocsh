@@ -75,7 +75,7 @@ iocshLoad("$(CALC)/iocsh/userCalc_extra.iocsh", "PREFIX=$(PREFIX), N=1, ARRAY_SI
 dbLoadRecords("$(LUA)/luaApp/Db/luascripts10.db", "P=$(PREFIX), R=lua:")
 
 # string sequence (sseq) records
-iocshLoad("$(CALC)/iocsh/sseq.iocsh", "PREFIX=$(PREFIX), INSTANCE=ES:")
+iocshLoad("$(TOP)/iocBoot/$(IOC)/cmds/sseq.iocsh", "PREFIX=$(PREFIX), INSTANCE=ES:")
 
 # busy record
 dbLoadRecords("$(BUSY)/busyApp/Db/busyRecord.db", "P=$(PREFIX),R=busy1")
