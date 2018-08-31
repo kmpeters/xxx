@@ -8,7 +8,7 @@ ARCH = windows-x64-static
 #ARCH = windows-x64-debug
 #ARCH = windows-x64
 
-TARGETS = envPaths
-#TARGETS = envPaths dllPath.bat
+#TARGETS = envPaths
+TARGETS = envPaths dllPath.bat
 
 include $(TOP)/configure/RULES.ioc
