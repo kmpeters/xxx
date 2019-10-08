@@ -14,7 +14,7 @@
 #!set_savefile_path(startup, "autosave")
 
 # ... or this...
-save_restoreSet_NFSHost("oxygen", "164.54.22.10")
+save_restoreSet_NFSHost("aquila", "164.54.100.16")
 set_savefile_path("<nfs_export_PATH_to_iocxxx_directory>", "autosave")
 
 # status PVs: default is to use them
