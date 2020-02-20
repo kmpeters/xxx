@@ -46,7 +46,7 @@ iocLogDisable=0
 # set SAVE_PATH to a path as the server sees it.  This currently
 # is supported only on vxWorks.
 
-#save_restoreSet_NFSHost("oxygen", "164.54.22.10")
+#save_restoreSet_NFSHost("aquila", "164.54.100.16")
 
 
 iocsh 
