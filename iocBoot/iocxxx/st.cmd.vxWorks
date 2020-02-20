@@ -53,6 +53,8 @@ iocsh
 
 < common.iocsh
 
+< iocsh/motors.iocsh
+
 # devIocStats
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db","IOC=xxx")
 

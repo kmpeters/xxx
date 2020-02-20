@@ -13,6 +13,8 @@ iocxxxLinux_registerRecordDeviceDriver(pdbbase)
 
 < common.iocsh
 
+< iocsh/motors.iocsh
+
 # devIocStats
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminSoft.db","IOC=xxx")
 
