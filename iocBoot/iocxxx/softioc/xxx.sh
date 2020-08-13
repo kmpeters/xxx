@@ -44,8 +44,9 @@ SNAME=${BASH_SOURCE:-$0}
 SELECTION=$1
 
 # uncomment for your OS here (comment out all the others)
+IOC_STARTUP_FILE="st.cmd"
 #IOC_STARTUP_FILE="st.cmd.Cygwin"
-IOC_STARTUP_FILE="st.cmd.Linux"
+#IOC_STARTUP_FILE="st.cmd.Linux"
 #IOC_STARTUP_FILE="st.cmd.vxWorks"
 #IOC_STARTUP_FILE="st.cmd.Win32"
 #IOC_STARTUP_FILE="st.cmd.Win64"
