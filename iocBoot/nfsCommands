@@ -6,11 +6,12 @@ routeShow
 # and writing files on the server.
 #
 nfsMount("s100dserv","/APSshare","/APSshare")
-hostAdd("oxygen","164.54.22.10")
-nfsMount("oxygen","/export/oxygen","/home/oxygen")
-nfsMount("oxygen","/export/oxygen4","/home/oxygen4")
-hostAdd("mooneylinux","164.54.51.75")
-nfsMount("mooneylinux","/local","/local")
+nfsMount("s100dserv","/xorApps","/xorApps")
+nfsMount("s100dserv","/xorApps","/net/xorApps")
+#!nfsMount("s100dserv","/export/beams","/home/beams")
+
+#!hostAdd("aquila","164.54.100.16")
+#!nfsMount("aquila","/export/beams3","/home/beams3")
 
 nfsDevShow
 # The following line eliminates "cksum: out of data" messages due to DHCP
