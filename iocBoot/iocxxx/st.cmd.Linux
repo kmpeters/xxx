@@ -14,6 +14,8 @@ iocxxxLinux_registerRecordDeviceDriver(pdbbase)
 < settings.iocsh
 < common.iocsh
 
+< iocsh/motors.iocsh
+
 ###############################################################################
 iocInit
 ###############################################################################
