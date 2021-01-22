@@ -7,13 +7,13 @@ include $(TOP)/configure/CONFIG
 #ARCH = windows-x64
 #ARCH = cygwin-x86
 #ARCH = linux-x86
-ARCH = linux-x86_64
-#ARCH = vxWorks-ppc32
+#ARCH = linux-x86_64
+ARCH = vxWorks-ppc32
 #ARCH = vxWorks694-ppc32
 #ARCH = vxWorks-ppc603
 
-#TARGETS = cdCommands
-TARGETS = envPaths
+TARGETS = cdCommands
+#TARGETS = envPaths
 #TARGETS = envPaths dllPath.bat
 
 include $(TOP)/configure/RULES.ioc
